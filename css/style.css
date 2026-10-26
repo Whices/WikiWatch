@@ -77,11 +77,12 @@ header nav a:hover{
 /* --------------------------------------------------------------- */
 
 
-
 .heros-container {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 20px;
+    justify-items: center;
+    padding:12px
 }
 
 .hero-card {
@@ -144,5 +145,4 @@ main > section > h2{
     flex-direction: column;
     align-items: center;
     margin: 20px;
-
 }
