@@ -73,6 +73,26 @@ header nav a:hover{
     transform: scale(1.02);
     transition: all 0.225s ease-in-out;
 }
+@media (max-width: 1000px) {
+    header{
+        height: 30mm;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    header nav{
+        width: 90%;
+        margin-top: 2mm ;
+    }
+    header img{
+        display:none;
+    }
+}
+
+@media (max-width: 600px) {
+    .heros-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
 /* --------------------------------------------------------------- */
 
