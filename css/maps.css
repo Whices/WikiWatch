@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+:root {
+    --principal: #17191F;
+    --card-bg: #232731;
+    --card-border : #363b47;
+    --orange: #F06436;
+    --text-main:#E8EAF0;
+    --text-main-hover: #e2e7f5;
+}
+
+/* Introduction de la page des maps */
+.maps-intro {
+    text-align: center;
+    color: var(--text-main-hover);
+    margin: -8px 15px 25px;
+}
+
+/* Grille des maps */
+.maps-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 12px;
+}
+
+/* Carte individuelle */
+.map-card {
+    min-width: 0;
+    overflow: hidden;
+    display: block;
+
+    color: var(--text-main);
+    text-decoration: none;
+
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.map-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--orange);
+}
+
+.map-card > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--principal);
+}
+
+.map-info {
+    padding: 14px;
+}
+
+.map-info h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.map-info p {
+    color: var(--orange);
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+/* Tablettes */
+@media (max-width: 900px) {
+    .maps-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Téléphones */
+@media (max-width: 550px) {
+    .maps-container {
+        grid-template-columns: 1fr;
+    }
+}
