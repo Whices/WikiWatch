@@ -78,13 +78,17 @@ header nav a:hover{
 
 
 .heros-container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 20px;
     justify-items: center;
+    justify-content: center;
     padding:12px
 }
-
+.hero-card{
+    flex: 0 1 165px;
+}
 .hero-card {
     width: 95%;
     background-color: var(--card-bg);
