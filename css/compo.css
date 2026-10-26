@@ -1,0 +1,90 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+
+ :root {
+    --principal: #17191F;
+    --card-bg: #232731;
+    --card-border: #363b47;
+    --orange: #F06436;
+    --text-main: #E8EAF0;
+    --text-main-hover: #e2e7f5;
+ }
+
+ #classement-heros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+ }
+
+ .hero-card {
+    background: var(--card-bg, #232731);
+    border: 1px solid var(--card-border, #363b47);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--text-main, #E8EAF0);
+    transition: all 0.225s ease-in-out;
+    width: 97%;
+    justify-items: center;
+    justify-self: center;
+ }
+
+ .hero-card:hover {
+    border: 1px solid var(--orange);
+    transition: all 0.225s ease-in-out;
+ }
+
+ .meta-filtres {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 12px;
+    border-radius: 12px;
+    gap: 12px;
+    margin-bottom: 20px;
+    background-color: #232731;
+    width: 50%;
+ }
+
+ .meta-filtres label {
+    color: var(--text-main);
+ }
+
+ .meta-filtres select {
+    padding: 10px 12px;
+    color: var(--text-main);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+ }
+
+
+ .hero-card h3 {
+    margin-top: 0;
+ }
+
+ .hero-card p {
+    margin-bottom: 0;
+ }
+
+ .winrate-bas {
+    color: #F06464;
+ }
+
+ .winrate-moyen {
+    color: #E8EAF0;
+ }
+
+ .winrate-haut {
+    color: #55D68B;
+ }
+
+ #meta-statut {
+    display: flex;
+    justify-content: center;
+ }

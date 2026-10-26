@@ -8,30 +8,10 @@
    <title>Accueil</title>
 
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/compo.css">
    <script src="js/meta.js" defer></script>
    <style>
-      #classement-heros {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-         gap: 16px;
-         margin-top: 20px;
-      }
 
-      .hero-card {
-         background: var(--card-bg, #232731);
-         border: 1px solid var(--card-border, #363b47);
-         border-radius: 12px;
-         padding: 16px;
-         color: var(--text-main, #E8EAF0);
-      }
-
-      .hero-card h3 {
-         margin-top: 0;
-      }
-
-      .hero-card p {
-         margin-bottom: 0;
-      }
    </style>
 </head>
 
@@ -50,10 +30,23 @@
    </header>
 
    <main>
-      <section>
-         <h2>Classement des héros</h2>
-         <div id="classement-heros"></div>
+      <section class="meta-filtres">
+         <label for="plateforme">Plateforme</label>
+         <select id="plateforme">
+            <option value="Console" selected>Console</option>
+            <option value="PC">PC</option>
+         </select>
+
+         <label for="rang">Rang</label>
+         <select id="rang">
+            <option value="All" selected>Tous les rangs</option>
+            <option value="DiamondPlus">Diamant et supérieur</option>
+         </select>
       </section>
+
+      <p id="meta-statut" aria-live="polite"></p>
+
+      <section id="classement-heros"></section>
 
    </main>
 </body>
