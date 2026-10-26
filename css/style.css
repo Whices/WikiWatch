@@ -87,7 +87,12 @@ header nav a:hover{
         display:none;
     }
 }
-
+main > section > h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
 
 /* --------------------------------------------------------------- */
 
