@@ -1,0 +1,30 @@
+
+{
+  "metadata": {
+    "rankScope": "Master+",
+    "updatedAt": "2026-10-26",
+    "status": "demo"
+  },
+  "heroes": [
+    {
+      "key": "ana",
+      "name": "Ana",
+      "winRate": 52.5
+    },
+    {
+      "key": "lucio",
+      "name": "Lúcio",
+      "winRate": 49.8
+    },
+    {
+      "key": "dva",
+      "name": "D.Va",
+      "winRate": 53.1
+    },
+    {
+      "key": "kiriko",
+      "name": "Kiriko",
+      "winRate": 51.2
+    }
+  ]
+}

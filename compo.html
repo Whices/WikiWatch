@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Accueil</title>
+
+   <link rel="stylesheet" href="css/style.css">
+   <script src="js/meta.js" defer></script>
+   <style>
+      #classement-heros {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+         gap: 16px;
+         margin-top: 20px;
+      }
+
+      .hero-card {
+         background: var(--card-bg, #232731);
+         border: 1px solid var(--card-border, #363b47);
+         border-radius: 12px;
+         padding: 16px;
+         color: var(--text-main, #E8EAF0);
+      }
+
+      .hero-card h3 {
+         margin-top: 0;
+      }
+
+      .hero-card p {
+         margin-bottom: 0;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50px" height="50px">
+      <div>
+         <h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1>
+      </div>
+      <nav>
+         <a href="./heros.html">HÉROS</a>
+         <a href="./map.html">MAPS</a>
+         <a href="./index.html">MÉTA</a>
+         <a href="./index.html">ACCUEIL</a>
+      </nav>
+   </header>
+
+   <main>
+      <section>
+         <h2>Classement des héros</h2>
+         <div id="classement-heros"></div>
+      </section>
+
+   </main>
+</body>
+
+</html>
