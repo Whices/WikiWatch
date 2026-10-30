@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Accueil</title>
+
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/meta.css">
+   <script src="js/meta.js" defer></script>
+   <style>
+
+   </style>
+</head>
+
+<body>
+   <header>
+      <img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50px" height="50px">
+      <div>
+         <h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1>
+      </div>
+      <nav>
+         <a href="./heros.html">HÉROS</a>
+         <a href="./map.html">MAPS</a>
+         <a href="./index.html">ACCUEIL</a>
+         <a href="./compo.html">COMPO</a>
+      </nav>
+   </header>
+
+   <main>
+      <section class="meta-filtres">
+         <label for="plateforme">Plateforme</label>
+         <select id="plateforme">
+            <option value="Console" selected>Console</option>
+            <option value="PC">PC</option>
+         </select>
+
+         <label for="rang">Rang</label>
+         <select id="rang">
+            <option value="All" selected>Tous les rangs</option>
+            <option value="DiamondPlus">Diamant et supérieur</option>
+         </select>
+      </section>
+
+      <p id="meta-statut" aria-live="polite"></p>
+
+      <section id="classement-heros"></section>
+
+   </main>
+</body>
+
+</html>
