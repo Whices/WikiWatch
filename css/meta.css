@@ -1,156 +1,160 @@
- * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
- }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
- :root {
-    --principal: #17191F;
-    --card-bg: #232731;
-    --card-border: #363b47;
-    --orange: #F06436;
-    --text-main: #E8EAF0;
-    --text-main-hover: #e2e7f5;
- }
-
+:root {
+  --principal: #17191f;
+  --card-bg: #232731;
+  --card-border: #363b47;
+  --orange: #f06436;
+  --text-main: #e8eaf0;
+  --text-main-hover: #e2e7f5;
+}
+/* MAIN SECTION */
+main > section {
+  padding: 10px;
+}
 
 /* GRILLE DES HEROS */
 
 #classement-heros {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 
-    margin-top: 20px;
-    width: 100%;
+  margin-top: 20px;
+  width: 100%;
 }
 
 /* CARTE */
 
 .hero-card {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 
-    min-width: 0;
-    padding: 12px 14px;
+  min-width: 0;
+  padding: 12px 14px;
 
-    background: #1A1D23;
-    border: 1px solid #343945;
-    border-radius: 10px;
+  background: #1a1d23;
+  border: 1px solid #343945;
+  border-radius: 10px;
 
-    color: #E8EAF0;
+  color: #e8eaf0;
 
-    transition: border-color 0.2s ease,
-                background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .hero-card:hover {
-    border-color: #F06436;
-    background: #20242C;
+  border-color: #f06436;
+  background: #20242c;
 }
 
 /* IDENTITE DU HERO */
 
 .hero-identity {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
 }
 
 .hero-identity img {
-    width: 58px;
-    height: 58px;
+  width: 58px;
+  height: 58px;
 
-    object-fit: cover;
-    border-radius: 6px;
+  object-fit: cover;
+  border-radius: 6px;
 
-    background: #292D37;
+  background: #292d37;
 }
 
 .hero-name {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 0;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
 }
 
 .hero-name h3 {
-    font-size: 17px;
-    text-transform: uppercase;
-    overflow-wrap: anywhere;
+  font-size: 17px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .hero-name span {
-    color: #F06436;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
+  color: #f06436;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .hero-rank {
-    color: #F06436;
-    font-size: 20px;
-    font-weight: 800;
+  color: #f06436;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 /* STATISTIQUES */
 
 .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
 
-    padding-top: 12px;
-    border-top: 1px solid #343945;
+  padding-top: 12px;
+  border-top: 1px solid #343945;
 }
 
 .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
 }
 
 .stat-value {
-    font-size: 17px;
-    font-weight: 700;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 .stat-label {
-    color: #9298A5;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  color: #9298a5;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* COULEURS WIN RATE */
 
 .winrate-bas {
-    color: #F06464;
+  color: #f06464;
 }
 
 .winrate-moyen {
-    color: #E8EAF0;
+  color: #e8eaf0;
 }
 
 .winrate-haut {
-    color: #55D68B;
+  color: #55d68b;
 }
 
 /* RESPONSIVE */
 /* TABLETTE */
 @media (max-width: 1000px) {
-    #classement-heros {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  #classement-heros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-    #classement-heros {
-        grid-template-columns: 1fr;
-    }
+  #classement-heros {
+    grid-template-columns: 1fr;
+  }
 }
