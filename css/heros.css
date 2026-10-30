@@ -31,10 +31,13 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 28%;
+    width: 25%;
     height: 4px;
     background: var(--orange);
     transition: width 0.3s ease;
+}
+.hero-card:hover::after {
+    width: 100%;
 }
 
 .hero-card:hover {
@@ -46,9 +49,7 @@
     transform: scale(1.07);
 }
 
-.hero-card:hover::after {
-    width: 100%;
-}
+
 
 .hero-info {
     position: absolute;
