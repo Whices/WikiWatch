@@ -44,12 +44,51 @@
 
         <section class="meta-section">
 
-            <div id="meta-statut" aria-live="polite"></div>
+        <div class="meta-filtres">
 
-            <!-- Les cartes des héros seront générées ici -->
-            <div id="classement-heros"></div>
+            <div class="filtre">
+                <label for="filtre-rang">Rang</label>
+                <select id="filtre-rang">
+                    <option value="all">Tous les rangs</option>
+                    <option value="diamond">Diamant</option>
+                </select>
+            </div>
 
-        </section>
+            <div class="filtre">
+                <label for="filtre-role">Rôle</label>
+                <select id="filtre-role">
+                    <option value="all">Tous les rôles</option>
+                    <option value="TANK">Tank</option>
+                    <option value="DAMAGE">Dégâts</option>
+                    <option value="SUPPORT">Support</option>
+                </select>
+            </div>
+
+            <div class="filtre">
+                <label for="tri-statistique">Trier par</label>
+                <select id="tri-statistique">
+                    <option value="winRate">Win rate</option>
+                    <option value="pickRate">Pick rate</option>
+                    <option value="banRate">Ban rate</option>
+                </select>
+            </div>
+
+            <div class="filtre recherche">
+                <label for="recherche-hero">Rechercher</label>
+                <input
+                    type="search"
+                    id="recherche-hero"
+                    placeholder="Nom du héros..."
+                />
+            </div>
+
+        </div>
+
+        <p id="meta-statut" aria-live="polite"></p>
+
+        <div id="classement-heros"></div>
+
+    </section>
 
     </main>
 

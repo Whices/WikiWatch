@@ -158,3 +158,95 @@ main > section {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* BARRE DE FILTRES */
+
+.meta-filtres {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    gap: 16px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 24px;
+    padding: 16px;
+
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+}
+
+.filtre {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filtre label {
+    color: var(--text-main);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.filtre select,
+.filtre input {
+    min-width: 145px;
+    padding: 10px 12px;
+
+    color: var(--text-main);
+    background: var(--principal);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+
+    font: inherit;
+}
+
+.filtre input::placeholder {
+    color: var(--text-secondary, #9298A5);
+}
+
+.filtre select:focus,
+.filtre input:focus {
+    outline: none;
+    border-color: var(--orange);
+}
+
+.recherche input {
+    min-width: 190px;
+}
+
+/* GRILLE DES HEROS */
+
+#classement-heros {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    #classement-heros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #classement-heros {
+        grid-template-columns: 1fr;
+    }
+
+    .meta-filtres {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .filtre,
+    .filtre select,
+    .filtre input {
+        width: 100%;
+    }
+}
