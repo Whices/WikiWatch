@@ -90,7 +90,7 @@ header::after {
     height: 3px;
     background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 30%, transparent 85%);
 }
-
+/* Logo/nom */
 header .header-logo {
     width: 46px;
     height: 46px;
@@ -116,7 +116,7 @@ header .wiki {
 header .watch {
     color: var(--orange);
 }
-
+/*----*/
 header nav {
     display: flex;
     flex-wrap: wrap;
@@ -217,7 +217,13 @@ main > section:not(.accueil-hero) > h2::before {
     clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 38px, 100% 100%, 38px 100%, 0 calc(100% - 38px));
     overflow: hidden;
 }
-
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 38px, 100% 100%, 38px 100%, 0 calc(100% - 38px));
+}
+/*
 .accueil-hero::before {
     content: "";
     position: absolute;
@@ -281,7 +287,7 @@ main > section:not(.accueil-hero) > h2::before {
     background: var(--orange-clair);
     transform: skewX(-12deg) translateY(-2px);
 }
-
+*/
 .accueil-liens {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
