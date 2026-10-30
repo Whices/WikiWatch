@@ -1,54 +1,57 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="fr">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   <title>Accueil</title>
+    <title>WikiWatch - Meta Overwatch</title>
 
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/meta.css">
-   <script src="js/meta.js" defer></script>
-   <style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/meta.css" />
 
-   </style>
+    <script src="js/meta.js" defer></script>
 </head>
 
 <body>
-   <header>
-      <img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50px" height="50px">
-      <div>
-         <h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1>
-      </div>
-      <nav>
-         <a href="./heros.html">HÉROS</a>
-         <a href="./map.html">MAPS</a>
-         <a href="./index.html">ACCUEIL</a>
-         <a href="./compo.html">COMPO</a>
-      </nav>
-   </header>
 
-   <main>
-      <section class="meta-filtres">
-         <label for="plateforme">Plateforme</label>
-         <select id="plateforme">
-            <option value="Console" selected>Console</option>
-            <option value="PC">PC</option>
-         </select>
+    <header>
 
-         <label for="rang">Rang</label>
-         <select id="rang">
-            <option value="All" selected>Tous les rangs</option>
-            <option value="DiamondPlus">Diamant et supérieur</option>
-         </select>
-      </section>
+        <img
+            src="photo/icons/Overwatch_circle_logo.svg.webp"
+            width="50"
+            height="50"
+            alt="Logo Overwatch"
+        />
 
-      <p id="meta-statut" aria-live="polite"></p>
+        <div>
+            <h1>
+                <span class="wiki">Wiki</span><span class="watch">Watch</span>
+            </h1>
+        </div>
 
-      <section id="classement-heros"></section>
+        <nav>
+            <a href="./heros.html">HÉROS</a>
+            <a href="./map.html">MAPS</a>
+            <a href="./index.html">ACCUEIL</a>
+            <a href="./compo.html">COMPO</a>
+        </nav>
 
-   </main>
+    </header>
+
+    <main>
+
+        <section class="meta-section">
+
+            <div id="meta-statut" aria-live="polite"></div>
+
+            <!-- Les cartes des héros seront générées ici -->
+            <div id="classement-heros"></div>
+
+        </section>
+
+    </main>
+
 </body>
-
 </html>

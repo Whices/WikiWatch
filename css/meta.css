@@ -13,78 +13,144 @@
     --text-main-hover: #e2e7f5;
  }
 
- #classement-heros {
+
+/* GRILLE DES HEROS */
+
+#classement-heros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
+
     margin-top: 20px;
- }
+    width: 100%;
+}
 
- .hero-card {
-    background: var(--card-bg, #232731);
-    border: 1px solid var(--card-border, #363b47);
-    border-radius: 12px;
-    padding: 16px;
-    color: var(--text-main, #E8EAF0);
-    transition: all 0.225s ease-in-out;
-    width: 97%;
-    justify-items: center;
-    justify-self: center;
- }
+/* CARTE */
 
- .hero-card:hover {
-    border: 1px solid var(--orange);
-    transition: all 0.225s ease-in-out;
- }
-
- .meta-filtres {
+.hero-card {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 12px;
-    border-radius: 12px;
-    gap: 12px;
-    margin-bottom: 20px;
-    background-color: #232731;
-    width: 50%;
- }
+    flex-direction: column;
+    gap: 14px;
 
- .meta-filtres label {
-    color: var(--text-main);
- }
+    min-width: 0;
+    padding: 12px 14px;
 
- .meta-filtres select {
-    padding: 10px 12px;
-    color: var(--text-main);
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
- }
+    background: #1A1D23;
+    border: 1px solid #343945;
+    border-radius: 10px;
 
-
- .hero-card h3 {
-    margin-top: 0;
- }
-
- .hero-card p {
-    margin-bottom: 0;
- }
-
- .winrate-bas {
-    color: #F06464;
- }
-
- .winrate-moyen {
     color: #E8EAF0;
- }
 
- .winrate-haut {
-    color: #55D68B;
- }
+    transition: border-color 0.2s ease,
+                background 0.2s ease;
+}
 
- #meta-statut {
+.hero-card:hover {
+    border-color: #F06436;
+    background: #20242C;
+}
+
+/* IDENTITE DU HERO */
+
+.hero-identity {
     display: flex;
-    justify-content: center;
- }
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.hero-identity img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+    border-radius: 6px;
+
+    background: #292D37;
+}
+
+.hero-name {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    flex: 1;
+}
+
+.hero-name h3 {
+    font-size: 17px;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.hero-name span {
+    color: #F06436;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-rank {
+    color: #F06436;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* STATISTIQUES */
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+
+    padding-top: 12px;
+    border-top: 1px solid #343945;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.stat-value {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: #9298A5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* COULEURS WIN RATE */
+
+.winrate-bas {
+    color: #F06464;
+}
+
+.winrate-moyen {
+    color: #E8EAF0;
+}
+
+.winrate-haut {
+    color: #55D68B;
+}
+
+/* RESPONSIVE */
+/* TABLETTE */
+@media (max-width: 1000px) {
+    #classement-heros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #classement-heros {
+        grid-template-columns: 1fr;
+    }
+}

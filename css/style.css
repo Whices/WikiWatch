@@ -6,12 +6,12 @@
 }
 
 :root {
-    --principal: #17191F;
-    --card-bg: #232731;
-    --card-border : #363b47;
+    --principal: #101216;
+    --card-bg: #222630;
+    --card-border : #343945;
     --orange: #F06436;
     --text-main:#E8EAF0;
-    --text-main-hover: #e2e7f5;
+    --text-main-hover: #9298A5;
 }
 
 body {
