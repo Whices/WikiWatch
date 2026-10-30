@@ -1,14 +1,33 @@
- * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
- }
+/* ==========================================================
+   Page COMPO (en préparation)
+   ========================================================== */
 
- :root {
-    --principal: #17191F;
-    --card-bg: #232731;
-    --card-border: #363b47;
-    --orange: #F06436;
-    --text-main: #E8EAF0;
-    --text-main-hover: #e2e7f5;
- }
+.bientot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 56px 28px;
+    text-align: center;
+
+    background: var(--card-bg);
+    border: 1px dashed #444b5a;
+    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
+}
+
+.bientot h3 {
+    color: var(--orange);
+    font-family: var(--font-titre);
+    font-size: 40px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.bientot p {
+    max-width: 44ch;
+    color: #aeb4c1;
+}

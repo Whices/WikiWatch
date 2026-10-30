@@ -1,98 +1,379 @@
+/*STYLE COMMUN A TOUTE LES PAGES DU SITE - WIKIWATCH*/
+
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap");
 
 * {
     box-sizing: border-box;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
 :root {
-    --principal: #101216;
-    --card-bg: #222630;
-    --card-border : #343945;
-    --orange: #F06436;
-    --text-main:#E8EAF0;
-    --text-main-hover: #9298A5;
+    --principal: #0d0f13;
+    --surface: #161920;
+    --card-bg: #1b1f28;
+    --card-border: #2c313d;
+    --orange: #f06436;
+    --orange-clair: #ff8a5c;
+    --bleu: #3aa0ff;
+    --text-main: #e8eaf0;
+    --text-main-hover: #9298a5;
+
+    --font-titre: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+    --font-texte: "Barlow", "Segoe UI", Arial, sans-serif;
+
+    --coupe: 14px;
+    --largeur-max: 1280px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background: var(--principal);
+    min-height: 100vh;
     color: var(--text-main);
-    font-family: Arial, sans-serif;
-}
-
-header{
-    background-color: var(--card-bg);
-    height: 23mm;
-
-    display:flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    border-bottom: 3px solid var(--orange);
-    margin-bottom: 5mm;
-}
-header img{
-    margin-left: 15px;
-    margin-right: -65px;
-}
-header .wiki{
-    color: var(--text-main);
-}
-header .watch{
-    color: var(--orange);
-}
-header nav{
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-
-    gap: 25px;
-}
-header nav a{
-    transition: all 0.225s ease-in-out;
-
-    width: 100px;
-    padding: 2px;
-
-    text-decoration: none;
-    color: var(--text-main);
-
+    font-family: var(--font-texte);
+    font-size: 16px;
+    line-height: 1.5;
     background-color: var(--principal);
-    border-radius: 0px 5px 0px 5px;
-    border: 2px solid var(--orange);
+    background-image:
+        radial-gradient(900px 500px at 8% -5%, rgb(240 100 54 / 16%), transparent 65%),
+        radial-gradient(800px 600px at 100% 100%, rgb(58 160 255 / 9%), transparent 60%),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(253, 0, 0, 0.016) 0 1px,
+            transparent 1px 14px
+        );
+    background-attachment: fixed;
 }
-header nav a:hover{
+
+::selection {
+    background: var(--orange);
+    color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--bleu);
+    outline-offset: 3px;
+}
+
+/* ---------- En-tête ---------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 18px;
+
+    padding: 12px max(24px, calc((100% - var(--largeur-max)) / 2));
+
+    background: rgb(13 15 19 / 82%);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 28px;
+}
+
+/* Filet orange dégradé sous l'en-tête */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 30%, transparent 85%);
+}
+
+header .header-logo {
+    width: 46px;
+    height: 46px;
+    filter: drop-shadow(0 0 10px rgb(240 100 54 / 55%));
+}
+
+header .header-name,
+header h1 {
+    font-family: var(--font-titre);
+    font-size: 40px;
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: none;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+header .wiki {
+    color: var(--text-main);
+}
+
+header .watch {
     color: var(--orange);
-    transform: scale(1.02);
-    transition: all 0.225s ease-in-out;
 }
-@media (max-width: 1000px) {
-    header{
-        height: 30mm;
-        display: flex;
-        flex-wrap: wrap;
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-left: auto;
+}
+
+header nav a {
+    position: relative;
+    padding: 8px 20px;
+
+    color: var(--text-main-hover);
+    font-family: var(--font-titre);
+    font-size: 19px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    transform: skewX(-12deg);
+    transition: color 0.2s, background-color 0.2s;
+}
+
+header nav a:hover {
+    color: var(--text-main);
+    background: rgb(255 255 255 / 7%);
+}
+
+/* Page courante */
+header nav a[aria-current="page"] {
+    color: #fff;
+    background: var(--orange);
+}
+
+@media (max-width: 800px) {
+    header {
+        justify-content: center;
+        padding-inline: 16px;
     }
-    header nav{
-        width: 90%;
-        margin-top: 2mm ;
+
+    header h1 {
+        font-size: 34px;
     }
-    header img{
-        display:none;
+
+    header nav {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    header nav a {
+        padding: 6px 14px;
+        font-size: 17px;
     }
 }
-main > section > h2{
+
+/* ---------- Contenu ---------- */
+
+main {
+    width: 100%;
+    max-width: var(--largeur-max);
+    margin: 0 auto;
+    padding: 0 24px 64px;
+}
+
+/* Titre de page : barre orange inclinée + titre condensé */
+main > section:not(.accueil-hero) > h2 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 6px 0 22px;
+
+    font-family: var(--font-titre);
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+main > section:not(.accueil-hero) > h2::before {
+    content: "";
+    width: 10px;
+    height: 0.9em;
+    background: var(--orange);
+    transform: skewX(-18deg);
+    box-shadow: 14px 0 0 rgb(240 100 54 / 35%);
+    margin-right: 10px;
+}
+
+/* ---------- Page d'accueil ---------- */
+
+.accueil-hero {
+    position: relative;
+    margin: 10px 0 44px;
+    padding: clamp(36px, 7vw, 84px) clamp(22px, 5vw, 64px);
+
+    background:
+        linear-gradient(120deg, rgb(240 100 54 / 20%), transparent 55%),
+        var(--surface);
+    border: 1px solid var(--card-border);
+    clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 38px, 100% 100%, 38px 100%, 0 calc(100% - 38px));
+    overflow: hidden;
+}
+
+/* Grand logo en filigrane */
+.accueil-hero::before {
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    width: 420px;
+    height: 420px;
+    transform: translateY(-50%);
+    background: url("../photo/icons/Overwatch_circle_logo.svg.webp") center / contain no-repeat;
+    opacity: 0.09;
+    pointer-events: none;
+}
+
+.accueil-hero h2 {
+    position: relative;
+    max-width: 14ch;
+
+    font-family: var(--font-titre);
+    font-size: clamp(38px, 9.5vw, 118px);
+    overflow-wrap: anywhere;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.92;
+    text-transform: uppercase;
+}
+
+.accueil-hero h2 em {
+    color: var(--orange);
+    font-style: inherit;
+}
+
+.accueil-hero p {
+    position: relative;
+    max-width: 52ch;
+    margin: 22px 0 30px;
+
+    color: #c3c8d4;
+    font-size: clamp(16px, 2vw, 19px);
+}
+
+.bouton {
+    position: relative;
+    display: inline-block;
+    padding: 12px 34px;
+
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--font-titre);
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transform: skewX(-12deg);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.bouton:hover {
+    background: var(--orange-clair);
+    transform: skewX(-12deg) translateY(-2px);
+}
+
+/* Cartes de navigation de l'accueil */
+.accueil-liens {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.lien-carte {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 20px;
+    gap: 8px;
+    min-height: 190px;
+    padding: 24px 22px;
+
+    color: var(--text-main);
+    text-decoration: none;
+
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
+    transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
-/* --------------------------------------------------------------- */
+/* Barre de couleur du bas, qui se déploie au survol */
+.lien-carte::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 36%;
+    height: 4px;
+    background: var(--accent, var(--orange));
+    transition: width 0.3s ease;
+}
 
+.lien-carte:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent, var(--orange));
+    background: #212631;
+}
+
+.lien-carte:hover::after {
+    width: 100%;
+}
+
+.lien-carte h3 {
+    font-family: var(--font-titre);
+    font-size: 34px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--accent, var(--orange));
+}
+
+.lien-carte p {
+    color: #aeb4c1;
+    font-size: 15px;
+}
+
+.lien-carte.tank { --accent: #3aa0ff; }
+.lien-carte.degats { --accent: #ff5a5a; }
+.lien-carte.soutien { --accent: #4fd68b; }
+.lien-carte.neutre { --accent: var(--orange); }
+
+@media (max-width: 1000px) {
+    .accueil-liens {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .accueil-liens {
+        grid-template-columns: 1fr;
+    }
+
+    .lien-carte {
+        min-height: 0;
+    }
+}
+
+/* Respect des préférences d'animation réduites */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -5,27 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Accueil</title>
+    <title>WikiWatch - Accueil</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <style>
-
-    </style>
 </head>
 <body>
     <header>
-        <img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50px" height="50px">
+        <a class="header-logo" href="./index.html"><img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50" height="50" alt="Logo Overwatch"></a>
         <div>
-            <h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1>
+            <a class="header-name" href="./index.html"><h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1></a>
         </div>
         <nav>
+            <a href="./index.html" aria-current="page">ACCUEIL</a>
             <a href="./heros.html">HÉROS</a>
             <a href="./map.html">MAPS</a>
             <a href="./meta.html">MÉTA</a>
-            <a href="./compo.html">COMPO</a> 
+            <a href="./compo.html">COMPO</a>
         </nav>
     </header>
 
-   
+
+    <main>
+        <section class="accueil-hero">
+            <h2>Maîtrise <em>Overwatch</em> 2</h2>
+            <p>Fiches de héros, maps et statistiques de la méta, mises à jour chaque jour. Tout ce qu'il faut pour choisir le bon héros avant la partie.</p>
+            <a class="bouton" href="./meta.html">Voir la méta</a>
+        </section>
+
+        <section class="accueil-liens">
+            <a class="lien-carte tank" href="./heros.html">
+                <h3>Héros</h3>
+                <p>Rôle, description et capacités de chaque héros du roster.</p>
+            </a>
+            <a class="lien-carte degats" href="./map.html">
+                <h3>Maps</h3>
+                <p>Toutes les cartes d'Overwatch 2 avec leurs modes de jeu.</p>
+            </a>
+            <a class="lien-carte neutre" href="./meta.html">
+                <h3>Méta</h3>
+                <p>Win rate, pick rate et ban rate classés par rang et par rôle.</p>
+            </a>
+            <a class="lien-carte soutien" href="./compo.html">
+                <h3>Compo</h3>
+                <p>Compositions d'équipe, bientôt disponibles.</p>
+            </a>
+        </section>
+    </main>
 </body>
 </html>

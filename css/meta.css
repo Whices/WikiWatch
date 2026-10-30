@@ -1,183 +1,26 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ==========================================================
+   Page MÉTA : filtres + classement des héros
+   ========================================================== */
+
+.meta-section {
+    padding: 0;
 }
 
-:root {
-  --principal: #17191f;
-  --card-bg: #232731;
-  --card-border: #363b47;
-  --orange: #f06436;
-  --text-main: #e8eaf0;
-  --text-main-hover: #e2e7f5;
-}
-/* MAIN SECTION */
-main > section {
-  padding: 10px;
-}
-
-/* GRILLE DES HEROS */
-
-#classement-heros {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-
-  margin-top: 20px;
-  width: 100%;
-}
-
-/* CARTE */
-
-.hero-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-
-  min-width: 0;
-  padding: 12px 14px;
-
-  background: #1a1d23;
-  border: 1px solid #343945;
-  border-radius: 10px;
-
-  color: #e8eaf0;
-
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
-}
-
-.hero-card:hover {
-  border-color: #f06436;
-  background: #20242c;
-}
-
-/* IDENTITE DU HERO */
-
-.hero-identity {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-}
-
-.hero-identity img {
-  width: 58px;
-  height: 58px;
-
-  object-fit: cover;
-  border-radius: 6px;
-
-  background: #292d37;
-}
-
-.hero-name {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 0;
-  flex: 1;
-}
-
-.hero-name h3 {
-  font-size: 17px;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-}
-
-.hero-name span {
-  color: #f06436;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.hero-rank {
-  color: #f06436;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-/* STATISTIQUES */
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-
-  padding-top: 12px;
-  border-top: 1px solid #343945;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 0;
-}
-
-.stat-value {
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.stat-label {
-  color: #9298a5;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* COULEURS WIN RATE */
-
-.winrate-bas {
-  color: #f06464;
-}
-
-.winrate-moyen {
-  color: #e8eaf0;
-}
-
-.winrate-haut {
-  color: #55d68b;
-}
-
-/* RESPONSIVE */
-/* TABLETTE */
-@media (max-width: 1000px) {
-  #classement-heros {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  #classement-heros {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-/* BARRE DE FILTRES */
+/* ---------- Barre de filtres ---------- */
 
 .meta-filtres {
     display: flex;
     flex-wrap: wrap;
-    align-items: end;
-    justify-content: center;
+    align-items: flex-end;
     gap: 16px;
 
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto 24px;
-    padding: 16px;
+    margin: 0 0 14px;
+    padding: 18px 20px;
 
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 12px;
+    border-left: 4px solid var(--orange);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--coupe)), calc(100% - var(--coupe)) 100%, 0 100%);
 }
 
 .filtre {
@@ -187,46 +30,203 @@ main > section {
 }
 
 .filtre label {
-    color: var(--text-main);
-    font-size: 12px;
+    color: var(--text-main-hover);
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .filtre select,
 .filtre input {
-    min-width: 145px;
-    padding: 10px 12px;
+    min-width: 160px;
+    padding: 10px 14px;
 
     color: var(--text-main);
-    background: var(--principal);
+    background-color: var(--principal);
     border: 1px solid var(--card-border);
-    border-radius: 8px;
+    border-radius: 0;
 
     font: inherit;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.filtre select {
+    appearance: none;
+    padding-right: 36px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23f06436' stroke-width='2'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.filtre select:hover,
+.filtre input:hover {
+    border-color: #4a5160;
 }
 
 .filtre input::placeholder {
-    color: var(--text-secondary, #9298A5);
+    color: #6c7280;
 }
 
 .filtre select:focus,
 .filtre input:focus {
     outline: none;
     border-color: var(--orange);
+    background-color: #12151b;
+}
+
+.recherche {
+    flex: 1 1 220px;
 }
 
 .recherche input {
-    min-width: 190px;
+    width: 100%;
 }
 
-/* GRILLE DES HEROS */
+#meta-statut {
+    min-height: 1.5em;
+    margin-bottom: 4px;
+    color: var(--text-main-hover);
+    font-size: 14px;
+}
+
+/* ---------- Grille du classement ---------- */
 
 #classement-heros {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    margin-top: 20px;
+    gap: 16px;
+    margin-top: 12px;
 }
+
+.hero-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    min-width: 0;
+    padding: 16px 18px 14px;
+    cursor: default;
+
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
+    transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.hero-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--orange);
+    background: #212631;
+}
+
+/* Podium : les trois premiers ont une barre colorée */
+.hero-card:nth-child(-n + 3)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.hero-card:nth-child(1)::before { background: #ffc83d; }
+.hero-card:nth-child(2)::before { background: #c5cbd6; }
+.hero-card:nth-child(3)::before { background: #d98a54; }
+
+/* ---------- Identité du héros ---------- */
+
+.hero-identity {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.hero-identity img {
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    background: #292d37;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+.hero-name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+}
+
+.hero-name h3 {
+    font-family: var(--font-titre);
+    font-size: 26px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.hero-name span {
+    color: var(--orange-clair);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Numéro de classement */
+.hero-rank {
+    align-self: flex-start;
+    color: rgb(240 100 54 / 90%);
+    font-family: var(--font-titre);
+    font-size: 36px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+}
+
+/* ---------- Statistiques ---------- */
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+
+    padding-top: 14px;
+    border-top: 1px solid var(--card-border);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.stat-value {
+    font-family: var(--font-titre);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+    color: var(--text-main-hover);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+/* Couleurs du win rate */
+.winrate-bas { color: #ff6b6b; }
+.winrate-moyen { color: var(--text-main); }
+.winrate-haut { color: #4fd68b; }
+
+/* ---------- Responsive ---------- */
 
 @media (max-width: 1000px) {
     #classement-heros {
@@ -240,7 +240,6 @@ main > section {
     }
 
     .meta-filtres {
-        width: 100%;
         align-items: stretch;
     }
 
