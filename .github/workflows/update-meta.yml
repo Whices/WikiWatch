@@ -31,18 +31,20 @@ jobs:
       # Exécution du script JavaScript
       - name: Récupérer les statistiques
         run: node scripts/update-meta.js
-
+      
       # Enregistrement des nouveaux fichiers JSON
       - name: Enregistrer les changements
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/meta.json data/meta-diamond.json
+          git add data/meta*.json
 
           if ! git diff --cached --quiet; then
             git commit -m "Mise à jour des statistiques Overwatch"
-            git push
+            git pull --rebase origin main
+            git push origin main
           else
             echo "Aucune modification des statistiques."
           fi
+
