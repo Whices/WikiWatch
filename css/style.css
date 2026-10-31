@@ -201,25 +201,69 @@ main > section:not(.accueil-hero) > h2::before {
     margin-right: 10px;
 }
 
-
 .accueil-hero {
     position: relative;
     margin: 10px 0 44px;
-    padding: clamp(36px, 7vw, 84px) clamp(22px, 5vw, 64px);
-
-    background:
-        linear-gradient(120deg, rgb(240 100 54 / 20%), transparent 55%),
-        var(--surface);
-    border: 1px solid var(--card-border);
+    background: var(--surface);
     clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 38px, 100% 100%, 38px 100%, 0 calc(100% - 38px));
     overflow: hidden;
 }
+
 .hero-image {
+    display: block;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 7;
     object-fit: cover;
-    clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 38px, 100% 100%, 38px 100%, 0 calc(100% - 38px));
 }
+
+.accueil-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(to top, rgb(12 16 24 / 90%) 0%, transparent 55%),
+        linear-gradient(120deg, rgb(var(--a-rgb, 240 100 54) / 14%), transparent 55%);
+}
+
+.hero-hud {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+    padding: clamp(20px, 4vw, 48px);
+    pointer-events: none;
+}
+
+.hud-tag {
+    padding: 3px 16px;
+    color: var(--on-a, #fff);
+    background: var(--a, var(--orange));
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transform: skewX(-12deg);
+}
+
+.hud-title {
+    max-width: 18ch;
+    font-family: var(--font-titre);
+    font-size: clamp(32px, 5.5vw, 66px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.98;
+    text-transform: uppercase;
+}
+/*#####################################\
+#                                      #
+#               BOUTON                 #
+#                                      #
+\#####################################*/
 
 .bouton {
     position: relative;
@@ -245,11 +289,19 @@ main > section:not(.accueil-hero) > h2::before {
     transform: skewX(-12deg) translateY(-2px);
 }
 
+
+/*#####################################\
+#                                      #
+#               MAIN-CARTENAV          #
+#                                      #
+\#####################################*/
+
 .accueil-liens {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 }
+
 
 .lien-carte {
     position: relative;
@@ -262,12 +314,44 @@ main > section:not(.accueil-hero) > h2::before {
     color: var(--text-main);
     text-decoration: none;
 
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
-    transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+    /* La bordure utilise la couleur d'accent */
+    background: var(--accent, var(--orange));
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--coupe)) 0,
+        100% var(--coupe),
+        100% 100%,
+        0 100%
+    );
+
+    transform: perspective(800px)
+        rotateX(var(--rx, 0deg))
+        rotateY(var(--ry, 0deg))
+        translateY(var(--ty, 0px));
+
+    transition:
+        transform 0.15s ease-out,
+        background 0.2s;
 }
 
+/* Intérieur de la carte : laisse apparaître 1px de bordure */
+.lien-carte::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--card-bg);
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--coupe) - 1px) 0,
+        100% var(--coupe),
+        100% 100%,
+        0 100%
+    );
+    transition: background 0.2s;
+}
+
+/* Barre inférieure */
 .lien-carte::after {
     content: "";
     position: absolute;
@@ -280,13 +364,21 @@ main > section:not(.accueil-hero) > h2::before {
 }
 
 .lien-carte:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent, var(--orange));
+    --ty: -5px;
+}
+
+.lien-carte:hover::before {
     background: #212631;
 }
 
 .lien-carte:hover::after {
     width: 100%;
+}
+
+/* Garde le texte au-dessus de la couche intérieure */
+.lien-carte > * {
+    position: relative;
+    z-index: 1;
 }
 
 .lien-carte h3 {
@@ -331,6 +423,13 @@ main > section:not(.accueil-hero) > h2::before {
         scroll-behavior: auto !important;
     }
 }
+
+
+/*#####################################\
+#                                      #
+#               FOOTER                 #
+#                                      #
+\#####################################*/
 
 .site-footer {
     width: 100%;
@@ -394,7 +493,6 @@ main > section:not(.accueil-hero) > h2::before {
     color: var(--orange);
 }
 
-
 .footer-bas {
     display: flex;
     justify-content: space-between;
@@ -419,7 +517,6 @@ main > section:not(.accueil-hero) > h2::before {
     text-align: right;
     white-space: nowrap;
 }
-
 
 @media (max-width: 700px) {
     .footer-haut {
