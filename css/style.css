@@ -324,9 +324,9 @@ main > section:not(.accueil-hero) > h2::before {
 
     color: var(--text-main);
     text-decoration: none;
-    background: var(--accent, var(--orange));
+    background: var(--card-bg);
     clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
-    transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
+    transform: perspective(250px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
     transition: transform 0.15s ease-out;
 }
 
@@ -337,6 +337,8 @@ main > section:not(.accueil-hero) > h2::before {
     background: var(--card-bg);
     clip-path: polygon(0 0, calc(100% - var(--coupe) + 0.6px) 0, 100% calc(var(--coupe) - 0.6px), 100% 100%, 0 100%);
     transition: background 0.2s;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
 }
 
 .lien-carte::after {
@@ -352,13 +354,16 @@ main > section:not(.accueil-hero) > h2::before {
 
 .lien-carte:hover {
     --ty: -5px;
+    /* background: var(--accent, var(--orange)); */
 }
 
+
 .lien-carte:hover::before {
-    background: #212631;
+    background: color-mix(in srgb, var(--accent) 10%, transparent);;
 }
 
 .lien-carte:hover::after {
+
     width: 100%;
 }
 
