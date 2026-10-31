@@ -205,7 +205,7 @@ body.modal-open {
 .modal-header {
     --img-size: 100px;
     --img-coupe: 14px;
-    position: relative;          /* needed for the overlay */
+    position: relative;         
     display: flex;
     align-items: center;
     gap: 20px;
@@ -221,7 +221,6 @@ body.modal-open {
     clip-path: polygon(0 0, calc(100% - var(--img-coupe)) 0, 100% var(--img-coupe), 100% 100%, 0 100%);
 }
 
-/* diagonal stroke on the cut corner, drawn over the image */
 .modal-header::before {
     content: "";
     position: absolute;
@@ -229,8 +228,7 @@ body.modal-open {
     top: 50%;
     width: var(--img-size);
     height: var(--img-size);
-    transform: translateY(-50%);   /* follows the image even if the title wraps on 2 lines */
-    pointer-events: none;
+    transform: translateY(-50%); 
     background: linear-gradient(225deg, var(--orange) 0 calc(var(--img-coupe) * 0.7072 + 2px), transparent 0);
 }
 /*
