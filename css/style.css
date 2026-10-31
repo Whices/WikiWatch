@@ -61,8 +61,6 @@ input:focus-visible {
     outline-offset: 3px;
 }
 
-/* ---------- En-tête ---------- */
-
 header {
     position: sticky;
     top: 0;
@@ -90,7 +88,6 @@ header::after {
     height: 3px;
     background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 30%, transparent 85%);
 }
-/* Logo/nom */
 header .header-logo {
     width: 46px;
     height: 46px;
@@ -335,9 +332,6 @@ main > section:not(.accueil-hero) > h2::before {
     }
 }
 
-
-/* ---------- Footer commun ---------- */
-
 .site-footer {
     width: 100%;
     margin-top: 40px;
@@ -352,8 +346,6 @@ main > section:not(.accueil-hero) > h2::before {
     margin: 0 auto;
     padding: 28px 24px 20px;
 }
-
-/* Partie haute : logo et navigation */
 
 .footer-haut {
     display: flex;
@@ -428,7 +420,6 @@ main > section:not(.accueil-hero) > h2::before {
     white-space: nowrap;
 }
 
-/* Adaptation mobile */
 
 @media (max-width: 700px) {
     .footer-haut {
