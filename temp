@@ -1,4 +1,4 @@
-/* STYLE COMMUN A TOUTE LES PAGES DU SITE - WIKIWATCH */
+/*STYLE COMMUN A TOUTE LES PAGES DU SITE - WIKIWATCH*/
 
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap");
 
@@ -40,7 +40,11 @@ body {
     background-image:
         radial-gradient(900px 500px at 8% -5%, rgb(240 100 54 / 16%), transparent 65%),
         radial-gradient(800px 600px at 100% 100%, rgb(58 160 255 / 9%), transparent 60%),
-        repeating-linear-gradient(-45deg, rgb(253 0 0 / 1.6%) 0 1px, transparent 1px 14px);
+        repeating-linear-gradient(
+            -45deg,
+            rgba(253, 0, 0, 0.016) 0 1px,
+            transparent 1px 14px
+        );
     background-attachment: fixed;
 }
 
@@ -57,8 +61,6 @@ input:focus-visible {
     outline-offset: 3px;
 }
 
-/* ---------- HEADER ---------- */
-
 header {
     position: sticky;
     top: 0;
@@ -69,12 +71,12 @@ header {
     align-items: center;
     gap: 14px 18px;
 
-    margin-bottom: 28px;
     padding: 12px max(24px, calc((100% - var(--largeur-max)) / 2));
 
     background: rgb(13 15 19 / 82%);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--card-border);
+    margin-bottom: 28px;
 }
 
 header::after {
@@ -86,7 +88,6 @@ header::after {
     height: 3px;
     background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 30%, transparent 85%);
 }
-
 header .header-logo {
     width: 46px;
     height: 46px;
@@ -112,7 +113,7 @@ header .wiki {
 header .watch {
     color: var(--orange);
 }
-
+/*----*/
 header nav {
     display: flex;
     flex-wrap: wrap;
@@ -168,7 +169,6 @@ header nav a[aria-current="page"] {
     }
 }
 
-/* ---------- MAIN ---------- */
 
 main {
     width: 100%;
@@ -195,13 +195,11 @@ main > section:not(.accueil-hero) > h2::before {
     content: "";
     width: 10px;
     height: 0.9em;
-    margin-right: 10px;
     background: var(--orange);
     transform: skewX(-18deg);
     box-shadow: 14px 0 0 rgb(240 100 54 / 35%);
+    margin-right: 10px;
 }
-
-/* ---------- HERO ---------- */
 
 .accueil-hero {
     position: relative;
@@ -261,8 +259,11 @@ main > section:not(.accueil-hero) > h2::before {
     line-height: 0.98;
     text-transform: uppercase;
 }
-
-/* ---------- BOUTON ---------- */
+/*#####################################\
+#                                      #
+#               BOUTON                 #
+#                                      #
+\#####################################*/
 
 .bouton {
     position: relative;
@@ -288,13 +289,19 @@ main > section:not(.accueil-hero) > h2::before {
     transform: skewX(-12deg) translateY(-2px);
 }
 
-/* ---------- CARTES DE LIENS ---------- */
+
+/*#####################################\
+#                                      #
+#               MAIN-CARTENAV          #
+#                                      #
+\#####################################*/
 
 .accueil-liens {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 }
+
 
 .lien-carte {
     position: relative;
@@ -306,12 +313,45 @@ main > section:not(.accueil-hero) > h2::before {
 
     color: var(--text-main);
     text-decoration: none;
-    border: 1px solid var(--card-border);
-    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
-    transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
-    transition: transform 0.15s ease-out, border-color 0.2s;
+
+    /* La bordure utilise la couleur d'accent */
+    background: var(--accent, var(--orange));
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--coupe)) 0,
+        100% var(--coupe),
+        100% 100%,
+        0 100%
+    );
+
+    transform: perspective(800px)
+        rotateX(var(--rx, 0deg))
+        rotateY(var(--ry, 0deg))
+        translateY(var(--ty, 0px));
+
+    transition:
+        transform 0.15s ease-out,
+        background 0.2s;
 }
 
+/* Intérieur de la carte : laisse apparaître 1px de bordure */
+.lien-carte::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--card-bg);
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--coupe) - 1px) 0,
+        100% var(--coupe),
+        100% 100%,
+        0 100%
+    );
+    transition: background 0.2s;
+}
+
+/* Barre inférieure */
 .lien-carte::after {
     content: "";
     position: absolute;
@@ -325,11 +365,20 @@ main > section:not(.accueil-hero) > h2::before {
 
 .lien-carte:hover {
     --ty: -5px;
-    border-color: var(--c, var(--accent, var(--orange)));
+}
+
+.lien-carte:hover::before {
+    background: #212631;
 }
 
 .lien-carte:hover::after {
     width: 100%;
+}
+
+/* Garde le texte au-dessus de la couche intérieure */
+.lien-carte > * {
+    position: relative;
+    z-index: 1;
 }
 
 .lien-carte h3 {
@@ -368,7 +417,19 @@ main > section:not(.accueil-hero) > h2::before {
     }
 }
 
-/* ---------- FOOTER ---------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/*#####################################\
+#                                      #
+#               FOOTER                 #
+#                                      #
+\#####################################*/
 
 .site-footer {
     width: 100%;
@@ -475,16 +536,5 @@ main > section:not(.accueil-hero) > h2::before {
     .footer-copyright {
         text-align: left;
         white-space: normal;
-    }
-}
-
-/* ---------- ACCESSIBILITE ---------- */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        transition: none !important;
-        scroll-behavior: auto !important;
     }
 }
