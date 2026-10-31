@@ -1,42 +1,78 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>WikiWatch - Maps</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/maps.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/maps.css" />
     <script src="js/maps.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <a class="header-logo" href="./index.html"><img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50" height="50" alt="Logo Overwatch"></a>
-        <div>
-            <a class="header-name" href="./index.html"><h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1></a>
-        </div>
-        <nav>
-            <a href="./index.html">ACCUEIL</a>
-            <a href="./heros.html">HÉROS</a>
-            <a href="./map.html" aria-current="page">MAPS</a>
-            <a href="./meta.html">MÉTA</a>
-            <a href="./compo.html">COMPO</a>
-        </nav>
+      <a class="header-logo" href="./index.html"
+        ><img
+          src="photo/icons/Overwatch_circle_logo.svg.webp"
+          width="50"
+          height="50"
+          alt="Logo Overwatch"
+      /></a>
+      <div>
+        <a class="header-name" href="./index.html"
+          ><h1>
+            <span class="wiki">Wiki</span><span class="watch">Watch</span>
+          </h1></a
+        >
+      </div>
+      <nav>
+        <a href="./index.html">ACCUEIL</a>
+        <a href="./heros.html">HÉROS</a>
+        <a href="./map.html" aria-current="page">MAPS</a>
+        <a href="./meta.html">MÉTA</a>
+        <a href="./compo.html">COMPO</a>
+      </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Choisis ta map</h2>
-            <p class="maps-intro">
-                Affichage des maps ow2
-            </p>
+      <section>
+        <h2>Choisis ta map</h2>
+        <p class="maps-intro">Affichage des maps ow2</p>
 
-            <div id="maps-container" class="maps-container">
-                <p>Chargement des maps...</p>
-            </div>
-        </section>
+        <div id="maps-container" class="maps-container">
+          <p>Chargement des maps...</p>
+        </div>
+      </section>
     </main>
-</body>
+    <footer class="site-footer">
+      <div class="footer-contenu">
+        <div class="footer-haut">
+          <a href="index.html" class="footer-logo">
+            <span class="wiki">WIKI</span><span class="watch">WATCH</span>
+          </a>
+
+          <nav class="footer-nav" aria-label="Navigation secondaire">
+            <a href="index.html">Accueil</a>
+            <a href="heros.html">Héros</a>
+            <a href="maps.html">Cartes</a>
+            <a href="meta.html">Meta</a>
+            <a href="compo.html">Compositions</a>
+          </nav>
+        </div>
+
+        <div class="footer-bas">
+          <p class="footer-legal">
+            WikiWatch est un projet de fans non officiel et n'est ni affilié à
+            Blizzard Entertainment ni approuvé par celle-ci. Overwatch et ses
+            éléments associés sont des marques de Blizzard Entertainment.
+          </p>
+
+          <p class="footer-copyright">
+            © 2026 WikiWatch. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

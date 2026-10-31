@@ -14,6 +14,11 @@
     clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
 }
 
+footer{
+    min-height: 30vh;
+    bottom: 0;
+}
+
 .bientot h3 {
     color: var(--orange);
     font-family: var(--font-titre);

@@ -1,8 +1,6 @@
-
 <!doctype html>
 <html lang="fr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -12,83 +10,112 @@
     <link rel="stylesheet" href="css/meta.css" />
 
     <script src="js/meta.js" defer></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
+      <a class="header-logo" href="./index.html"
+        ><img
+          src="photo/icons/Overwatch_circle_logo.svg.webp"
+          width="50"
+          height="50"
+          alt="Logo Overwatch"
+      /></a>
+      <div>
+        <a class="header-name" href="./index.html"
+          ><h1>
+            <span class="wiki">Wiki</span><span class="watch">Watch</span>
+          </h1></a
+        >
+      </div>
 
-        <a class="header-logo" href="./index.html"><img src="photo/icons/Overwatch_circle_logo.svg.webp" width="50" height="50" alt="Logo Overwatch"></a>
-        <div>
-            <a class="header-name" href="./index.html"><h1><span class="wiki">Wiki</span><span class="watch">Watch</span></h1></a>
-        </div>
-
-        <nav>
-            <a href="./index.html">ACCUEIL</a>
-            <a href="./heros.html">HÉROS</a>
-            <a href="./map.html">MAPS</a>
-            <a href="./meta.html" aria-current="page">MÉTA</a>
-            <a href="./compo.html">COMPO</a>
-        </nav>
-
+      <nav>
+        <a href="./index.html">ACCUEIL</a>
+        <a href="./heros.html">HÉROS</a>
+        <a href="./map.html">MAPS</a>
+        <a href="./meta.html" aria-current="page">MÉTA</a>
+        <a href="./compo.html">COMPO</a>
+      </nav>
     </header>
 
     <main>
-
-        <section class="meta-section">
-
+      <section class="meta-section">
         <h2>Méta du moment</h2>
 
         <div class="meta-filtres">
+          <div class="filtre">
+            <label for="filtre-rang">Rang</label>
+            <select id="filtre-rang">
+              <option value="all">Tous les rangs</option>
+              <option value="platinium">Platine</option>
+              <option value="emerald">Emeraude</option>
+              <option value="diamond">Diamant</option>
+              <option value="master">Master</option>
+            </select>
+          </div>
 
-            <div class="filtre">
-                <label for="filtre-rang">Rang</label>
-                <select id="filtre-rang">
-                    <option value="all">Tous les rangs</option>
-                    <option value="platinium">Platine</option>
-                    <option value="emerald">Emeraude</option>
-                    <option value="diamond">Diamant</option>
-                    <option value="master">Master</option>
-                </select>
-            </div>
+          <div class="filtre">
+            <label for="filtre-role">Rôle</label>
+            <select id="filtre-role">
+              <option value="all">Tous les rôles</option>
+              <option value="TANK">Tank</option>
+              <option value="DAMAGE">Dégâts</option>
+              <option value="SUPPORT">Support</option>
+            </select>
+          </div>
 
-            <div class="filtre">
-                <label for="filtre-role">Rôle</label>
-                <select id="filtre-role">
-                    <option value="all">Tous les rôles</option>
-                    <option value="TANK">Tank</option>
-                    <option value="DAMAGE">Dégâts</option>
-                    <option value="SUPPORT">Support</option>
-                </select>
-            </div>
+          <div class="filtre">
+            <label for="tri-statistique">Trier par</label>
+            <select id="tri-statistique">
+              <option value="winRate">Win rate</option>
+              <option value="pickRate">Pick rate</option>
+              <option value="banRate">Ban rate</option>
+            </select>
+          </div>
 
-            <div class="filtre">
-                <label for="tri-statistique">Trier par</label>
-                <select id="tri-statistique">
-                    <option value="winRate">Win rate</option>
-                    <option value="pickRate">Pick rate</option>
-                    <option value="banRate">Ban rate</option>
-                </select>
-            </div>
-
-            <div class="filtre recherche">
-                <label for="recherche-hero">Rechercher</label>
-                <input
-                    type="search"
-                    id="recherche-hero"
-                    placeholder="Nom du héros..."
-                />
-            </div>
-
+          <div class="filtre recherche">
+            <label for="recherche-hero">Rechercher</label>
+            <input
+              type="search"
+              id="recherche-hero"
+              placeholder="Nom du héros..."
+            />
+          </div>
         </div>
 
         <p id="meta-statut" aria-live="polite"></p>
 
         <div id="classement-heros"></div>
-
-    </section>
-
+      </section>
     </main>
+    <footer class="site-footer">
+      <div class="footer-contenu">
+        <div class="footer-haut">
+          <a href="index.html" class="footer-logo">
+            <span class="wiki">WIKI</span><span class="watch">WATCH</span>
+          </a>
 
-</body>
+          <nav class="footer-nav" aria-label="Navigation secondaire">
+            <a href="index.html">Accueil</a>
+            <a href="heros.html">Héros</a>
+            <a href="maps.html">Cartes</a>
+            <a href="meta.html">Meta</a>
+            <a href="compo.html">Compositions</a>
+          </nav>
+        </div>
+
+        <div class="footer-bas">
+          <p class="footer-legal">
+            WikiWatch est un projet de fans non officiel et n'est ni affilié à
+            Blizzard Entertainment ni approuvé par celle-ci. Overwatch et ses
+            éléments associés sont des marques de Blizzard Entertainment.
+          </p>
+
+          <p class="footer-copyright">
+            © 2026 WikiWatch. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
