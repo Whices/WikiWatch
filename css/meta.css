@@ -106,7 +106,7 @@
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
-    transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+    transition: all 0.2s;
 }
 
 .hero-card:hover {
