@@ -45,7 +45,7 @@ async function mettreAJourClassements() {
 
     await recupererStatistiques("All", "data/meta.json");
 
-    await recupererStatistiques("Platinium", "data/meta-plat.json");
+    await recupererStatistiques("Platinum", "data/meta-plat.json");
 
     await recupererStatistiques("Diamond", "data/meta-diamond.json");
 
