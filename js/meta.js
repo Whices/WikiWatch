@@ -14,9 +14,14 @@ let heros = [];
 async function chargerClassement() {
 
     try {
-        const fichier = filtreRang.value === "diamond"
-            ? "data/meta-diamond.json"
-            : "data/meta.json";
+        const fichiersMeta = {
+            all : "data/meta.json",
+            platinium : "data/meta-plat.json",
+            emerald : "data/meta-emerald.json",
+            diamond : "data/meta-diamond.json",
+            master : "data/meta-master.json"
+        }
+        const fichier = fichiersMeta[filtreRang.value]
 
         statut.textContent = "Chargement des statistiques...";
 
