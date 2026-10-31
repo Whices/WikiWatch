@@ -94,6 +94,7 @@
 }
 
 .hero-card {
+    --edge: var(--card-border);   /* color of the diagonal stroke */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -103,16 +104,19 @@
     padding: 16px 18px 14px;
     cursor: default;
 
-    background: var(--card-bg);
+    background-color: var(--card-bg);
+    /* diagonal stroke on the cut corner */
+    background-image: linear-gradient(225deg, var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px), transparent 0);
     border: 1px solid var(--card-border);
     clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
     transition: all 0.2s;
 }
 
 .hero-card:hover {
+    --edge: var(--orange);        /* stroke follows the hover border color */
     transform: translateY(-3px);
     border-color: var(--orange);
-    background: #212631;
+    background-color: #212631;    /* was `background:`, see note below */
 }
 
 .hero-card:nth-child(-n + 3)::before {
