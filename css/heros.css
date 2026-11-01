@@ -3,34 +3,54 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     gap: 18px;
+    
 }
 
 .hero-card {
-    --edge: var(--card-border); 
+    --edge: var(--card-border);
+
     position: relative;
     cursor: pointer;
     overflow: hidden;
+
     color: var(--text-main);
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
-    
-    transition: transform 0.2s, border-color 0.2s;
-}
 
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--coupe)) 0,
+        100% var(--coupe),
+        100% 100%,
+        0 100%
+    );
+
+    transform: perspective(250px)
+        rotateX(var(--rx, 0deg))
+        rotateY(var(--ry, 0deg))
+        translateY(var(--ty, 0px));
+
+    transition: transform 0.2s ease, border-color 0.2s;
+}
 
 .hero-card::before {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 2;              
-    pointer-events: none;    
-    background: linear-gradient(225deg, var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px), transparent 0);
+    z-index: 2;
+    pointer-events: none;
+
+    background: linear-gradient(
+        225deg,
+        var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px),
+        transparent 0
+    );
 }
 
 .hero-card:hover {
-    --edge: var(--orange); 
+    --edge: var(--orange);
     --ty: -5px;
+
     border-color: var(--orange);
 }
 
@@ -41,6 +61,7 @@
     object-fit: cover;
     background-color: var(--principal);
     transition: transform 0.35s ease;
+    
 }
 
 .hero-card::after {
@@ -52,19 +73,15 @@
     height: 4px;
     background: var(--orange);
     transition: width 0.3s ease;
+    
 }
 .hero-card:hover::after {
     width: 100%;
 }
 
-.hero-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--orange);
-}
-
 .hero-card:hover img {
     transform: scale(1.07);
-}
+} 
 
 
 
@@ -73,6 +90,7 @@
     inset: auto 0 0 0;
     padding: 46px 14px 16px;
     background: linear-gradient(to top, rgb(8 10 14 / 96%) 15%, rgb(8 10 14 / 0%));
+    
 }
 
 .hero-info h3 {
@@ -109,6 +127,7 @@
         font-size: 22px;
     }
 }
+
 
 body.modal-open {
     overflow: hidden;
