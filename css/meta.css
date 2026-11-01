@@ -1,242 +1,268 @@
 .meta-section {
-    padding: 0;
+  padding: 0;
 }
 
-
 .meta-filtres {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
 
-    margin: 0 0 14px;
-    padding: 18px 20px;
+  margin: 0 0 14px;
+  padding: 18px 20px;
 
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-left: 4px solid var(--orange);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--coupe)), calc(100% - var(--coupe)) 100%, 0 100%);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--orange);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--coupe)),
+    calc(100% - var(--coupe)) 100%,
+    0 100%
+  );
 }
 
 .filtre {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .filtre label {
-    color: var(--text-main-hover);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  color: var(--text-main-hover);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .filtre select,
 .filtre input {
-    min-width: 160px;
-    padding: 10px 14px;
+  min-width: 160px;
+  padding: 10px 14px;
 
-    color: var(--text-main);
-    background-color: var(--principal);
-    border: 1px solid var(--card-border);
-    border-radius: 0;
+  color: var(--text-main);
+  background-color: var(--principal);
+  border: 1px solid var(--card-border);
+  border-radius: 0;
 
-    font: inherit;
-    transition: border-color 0.2s, background-color 0.2s;
+  font: inherit;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
 }
 
 .filtre select {
-    appearance: none;
-    padding-right: 36px;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23f06436' stroke-width='2'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
+  appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23f06436' stroke-width='2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
 }
 
 .filtre select:hover,
 .filtre input:hover {
-    border-color: #4a5160;
+  border-color: #4a5160;
 }
 
 .filtre input::placeholder {
-    color: #6c7280;
+  color: #6c7280;
 }
 
 .filtre select:focus,
 .filtre input:focus {
-    outline: none;
-    border-color: var(--orange);
-    background-color: #12151b;
+  outline: none;
+  border-color: var(--orange);
+  background-color: #12151b;
 }
 
 .recherche {
-    flex: 1 1 220px;
+  flex: 1 1 220px;
 }
 
 .recherche input {
-    width: 100%;
+  width: 100%;
 }
 
 #meta-statut {
-    min-height: 1.5em;
-    margin-bottom: 4px;
-    color: var(--text-main-hover);
-    font-size: 14px;
+  min-height: 1.5em;
+  margin-bottom: 4px;
+  color: var(--text-main-hover);
+  font-size: 14px;
 }
 
-
 #classement-heros {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 12px;
 }
 
 .hero-card {
-    --edge: var(--card-border);   
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  --edge: var(--card-border);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-    min-width: 0;
-    padding: 16px 18px 14px;
-    cursor: default;
+  min-width: 0;
+  padding: 16px 18px 14px;
+  cursor: default;
 
-    background-color: var(--card-bg);
+  background-color: var(--card-bg);
 
-    background-image: linear-gradient(225deg, var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px), transparent 0);
-    border: 1px solid var(--card-border);
-    clip-path: polygon(0 0, calc(100% - var(--coupe)) 0, 100% var(--coupe), 100% 100%, 0 100%);
-    transition: all 0.2s;
+  background-image: linear-gradient(
+    225deg,
+    var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px),
+    transparent 0
+  );
+  border: 1px solid var(--card-border);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--coupe)) 0,
+    100% var(--coupe),
+    100% 100%,
+    0 100%
+  );
+  transition: all 0.2s;
 }
 
 .hero-card:hover {
-    --edge: var(--orange);       
-    transform: translateY(-3px);
-    border-color: var(--orange);
-    background-color: #212631;   
+  --edge: var(--orange);
+  transform: translateY(-3px);
+  border-color: var(--orange);
+  background-color: #212631;
 }
 
 .hero-card:nth-child(-n + 3)::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
 }
 
-.hero-card:nth-child(1)::before { background: #ffc83d; }
-.hero-card:nth-child(2)::before { background: #c5cbd6; }
-.hero-card:nth-child(3)::before { background: #d98a54; }
-
+.hero-card:nth-child(1)::before {
+  background: #ffc83d;
+}
+.hero-card:nth-child(2)::before {
+  background: #c5cbd6;
+}
+.hero-card:nth-child(3)::before {
+  background: #d98a54;
+}
 
 .hero-identity {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
 }
 
 .hero-identity img {
-    width: 62px;
-    height: 62px;
-    object-fit: cover;
-    background: #292d37;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  background: #292d37;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
 }
 
 .hero-name {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 0;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
 }
 
 .hero-name h3 {
-    font-family: var(--font-titre);
-    font-size: 26px;
-    font-weight: 900;
-    font-style: italic;
-    line-height: 1;
-    text-transform: uppercase;
-    overflow-wrap: anywhere;
+  font-family: var(--font-titre);
+  font-size: 26px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .hero-name span {
-    color: var(--orange-clair);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
+  color: var(--orange-clair);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .hero-rank {
-    align-self: flex-start;
-    color: rgb(240 100 54 / 90%);
-    font-family: var(--font-titre);
-    font-size: 36px;
-    font-weight: 900;
-    font-style: italic;
-    line-height: 1;
+  align-self: flex-start;
+  color: rgb(240 100 54 / 90%);
+  font-family: var(--font-titre);
+  font-size: 36px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
 }
 
 .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
 
-    padding-top: 14px;
-    border-top: 1px solid var(--card-border);
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
 }
 
 .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .stat-value {
-    font-family: var(--font-titre);
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.1;
-    font-variant-numeric: tabular-nums;
+  font-family: var(--font-titre);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
-    color: var(--text-main-hover);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
+  color: var(--text-main-hover);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
 }
 
-.winrate-bas { color: #ff6b6b; }
-.winrate-moyen { color: var(--text-main); }
-.winrate-haut { color: #4fd68b; }
-
+.winrate-bas {
+  color: #ff6b6b;
+}
+.winrate-moyen {
+  color: var(--text-main);
+}
+.winrate-haut {
+  color: #4fd68b;
+}
 
 @media (max-width: 1000px) {
-    #classement-heros {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  #classement-heros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 600px) {
-    #classement-heros {
-        grid-template-columns: 1fr;
-    }
+  #classement-heros {
+    grid-template-columns: 1fr;
+  }
 
-    .meta-filtres {
-        align-items: stretch;
-    }
+  .meta-filtres {
+    align-items: stretch;
+  }
 
-    .filtre,
-    .filtre select,
-    .filtre input {
-        width: 100%;
-    }
+  .filtre,
+  .filtre select,
+  .filtre input {
+    width: 100%;
+  }
 }

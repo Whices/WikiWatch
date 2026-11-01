@@ -1,254 +1,271 @@
-
 .heros-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: 18px;
-    
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 18px;
 }
 
 .hero-card {
-    --edge: var(--card-border);
+  --edge: var(--card-border);
 
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
 
-    color: var(--text-main);
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+  color: var(--text-main);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
 
-    clip-path: polygon(
-        0 0,
-        calc(100% - var(--coupe)) 0,
-        100% var(--coupe),
-        100% 100%,
-        0 100%
-    );
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--coupe)) 0,
+    100% var(--coupe),
+    100% 100%,
+    0 100%
+  );
 
-    transform: perspective(250px)
-        rotateX(var(--rx, 0deg))
-        rotateY(var(--ry, 0deg))
-        translateY(var(--ty, 0px));
+  transform: perspective(250px) rotateX(var(--rx, 0deg))
+    rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
 
-    transition: transform 0.2s ease, border-color 0.2s;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s;
 }
 
 .hero-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
 
-    background: linear-gradient(
-        225deg,
-        var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px),
-        transparent 0
-    );
+  background: linear-gradient(
+    225deg,
+    var(--edge) 0 calc(var(--coupe) * 0.7072 + 1.5px),
+    transparent 0
+  );
 }
 
 .hero-card:hover {
-    --edge: var(--orange);
-    --ty: -5px;
+  --edge: var(--orange);
+  --ty: -5px;
 
-    border-color: var(--orange);
+  border-color: var(--orange);
 }
 
 .hero-card img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    background-color: var(--principal);
-    transition: transform 0.35s ease;
-    
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background-color: var(--principal);
+  transition: transform 0.35s ease;
 }
 
 .hero-card::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 25%;
-    height: 4px;
-    background: var(--orange);
-    transition: width 0.3s ease;
-    
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  height: 4px;
+  background: var(--orange);
+  transition: width 0.3s ease;
 }
 .hero-card:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .hero-card:hover img {
-    transform: scale(1.07);
-} 
-
-
+  transform: scale(1.07);
+}
 
 .hero-info {
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 46px 14px 16px;
-    background: linear-gradient(to top, rgb(8 10 14 / 96%) 15%, rgb(8 10 14 / 0%));
-    
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 46px 14px 16px;
+  background: linear-gradient(
+    to top,
+    rgb(8 10 14 / 96%) 15%,
+    rgb(8 10 14 / 0%)
+  );
 }
 
 .hero-info h3 {
-    margin: 0 0 6px;
-    font-family: var(--font-titre);
-    font-size: 27px;
-    font-weight: 900;
-    font-style: italic;
-    line-height: 1;
-    text-transform: uppercase;
-    text-shadow: 0 2px 8px rgb(0 0 0 / 60%);
+  margin: 0 0 6px;
+  font-family: var(--font-titre);
+  font-size: 27px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 60%);
 }
 
 .hero-role {
-    display: inline-block;
-    padding: 2px 10px;
+  display: inline-block;
+  padding: 2px 10px;
 
-    background: rgb(240 100 54 / 16%);
-    border-left: 3px solid var(--orange);
-    color: var(--orange-clair);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  background: rgb(240 100 54 / 16%);
+  border-left: 3px solid var(--orange);
+  color: var(--orange-clair);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 600px) {
-    .heros-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
+  .heros-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
 
-    .hero-info h3 {
-        font-size: 22px;
-    }
+  .hero-info h3 {
+    font-size: 22px;
+  }
 }
 
-
 body.modal-open {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    padding: 20px;
-    background: rgb(5 6 9 / 80%);
-    backdrop-filter: blur(6px);
+  padding: 20px;
+  background: rgb(5 6 9 / 80%);
+  backdrop-filter: blur(6px);
 
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
 
 .modal-overlay.visible {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .hero-modal {
-    position: relative;
-    width: min(880px, 100%);
-    max-height: 88vh;
+  position: relative;
+  width: min(880px, 100%);
+  max-height: 88vh;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    background:
-        radial-gradient(500px 260px at 0% 0%, rgb(240 100 54 / 16%), transparent 70%),
-        var(--card-bg);
-    color: var(--text-main);
-    border: 1px solid var(--card-border);
-    border-top: 4px solid var(--orange);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
-    box-shadow: 0 24px 70px rgb(0 0 0 / 55%);
+  background:
+    radial-gradient(
+      500px 260px at 0% 0%,
+      rgb(240 100 54 / 16%),
+      transparent 70%
+    ),
+    var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+  border-top: 4px solid var(--orange);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 26px),
+    calc(100% - 26px) 100%,
+    0 100%
+  );
+  box-shadow: 0 24px 70px rgb(0 0 0 / 55%);
 
-    overflow: hidden;
-    transform: translateY(18px);
-    transition: transform 0.25s ease;
+  overflow: hidden;
+  transform: translateY(18px);
+  transition: transform 0.25s ease;
 }
 
 .modal-overlay.visible .hero-modal {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .modal-close {
-    position: absolute;
-    z-index: 2;
-    top: 12px;
-    right: 14px;
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 14px;
 
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 
-    border: none;
-    background: rgb(255 255 255 / 8%);
-    color: var(--text-main);
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
+  border: none;
+  background: rgb(255 255 255 / 8%);
+  color: var(--text-main);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
 
-    transform: skewX(-12deg);
-    transition: background-color 0.2s;
+  transform: skewX(-12deg);
+  transition: background-color 0.2s;
 }
 
 .modal-close:hover {
-    background: var(--orange);
-    color: #fff;
+  background: var(--orange);
+  color: #fff;
 }
 
 .modal-content {
-    padding: 28px;
-    overflow-y: auto;
-    min-height: 0;
-    scrollbar-color: var(--orange) transparent;
+  padding: 28px;
+  overflow-y: auto;
+  min-height: 0;
+  scrollbar-color: var(--orange) transparent;
 }
 
 .modal-loading {
-    padding: 30px 0;
-    text-align: center;
-    color: var(--text-main-hover);
+  padding: 30px 0;
+  text-align: center;
+  color: var(--text-main-hover);
 }
 
-
 .modal-header {
-    --img-size: 100px;
-    --img-coupe: 14px;
-    position: relative;         
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-right: 48px;
-    margin-bottom: 22px;
+  --img-size: 100px;
+  --img-coupe: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 48px;
+  margin-bottom: 22px;
 }
 
 .modal-header > img {
-    width: var(--img-size);
-    height: var(--img-size);
-    object-fit: cover;
-    border: 2px solid var(--orange);
-    clip-path: polygon(0 0, calc(100% - var(--img-coupe)) 0, 100% var(--img-coupe), 100% 100%, 0 100%);
+  width: var(--img-size);
+  height: var(--img-size);
+  object-fit: cover;
+  border: 2px solid var(--orange);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--img-coupe)) 0,
+    100% var(--img-coupe),
+    100% 100%,
+    0 100%
+  );
 }
 
 .modal-header::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: var(--img-size);
-    height: var(--img-size);
-    transform: translateY(-50%); 
-    background: linear-gradient(225deg, var(--orange) 0 calc(var(--img-coupe) * 0.7072 + 2px), transparent 0);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: var(--img-size);
+  height: var(--img-size);
+  transform: translateY(-50%);
+  background: linear-gradient(
+    225deg,
+    var(--orange) 0 calc(var(--img-coupe) * 0.7072 + 2px),
+    transparent 0
+  );
 }
 /*
 .modal-header {
@@ -268,98 +285,98 @@ body.modal-open {
 }*/
 
 .modal-header h2 {
-    margin-bottom: 10px;
-    font-family: var(--font-titre);
-    font-size: clamp(34px, 6vw, 54px);
-    font-weight: 900;
-    font-style: italic;
-    line-height: 0.95;
-    text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: var(--font-titre);
+  font-size: clamp(34px, 6vw, 54px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.95;
+  text-transform: uppercase;
 }
 
 .modal-description {
-    max-width: 70ch;
-    margin-bottom: 28px;
-    padding-left: 16px;
-    border-left: 3px solid var(--orange);
-    color: #c9cedb;
-    line-height: 1.65;
+  max-width: 70ch;
+  margin-bottom: 28px;
+  padding-left: 16px;
+  border-left: 3px solid var(--orange);
+  color: #c9cedb;
+  line-height: 1.65;
 }
 
 .abilities-title {
-    margin-bottom: 14px;
-    color: var(--orange);
-    font-family: var(--font-titre);
-    font-size: 30px;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
+  margin-bottom: 14px;
+  color: var(--orange);
+  font-family: var(--font-titre);
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 .abilities-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .ability {
-    min-width: 0;
-    padding: 16px;
+  min-width: 0;
+  padding: 16px;
 
-    background: var(--principal);
-    border: 1px solid var(--card-border);
-    border-left: 3px solid var(--orange);
-    transition: background-color 0.2s;
+  background: var(--principal);
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--orange);
+  transition: background-color 0.2s;
 }
 
 .ability:hover {
-    background: #12151b;
+  background: #12151b;
 }
 
 .ability img {
-    width: 46px;
-    height: 46px;
-    margin-bottom: 10px;
-    object-fit: contain;
-    padding: 6px;
-    background: rgb(240 100 54 / 14%);
+  width: 46px;
+  height: 46px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  padding: 6px;
+  background: rgb(240 100 54 / 14%);
 }
 
 .ability h4 {
-    margin-bottom: 6px;
-    color: var(--text-main);
-    font-family: var(--font-titre);
-    font-size: 22px;
-    font-weight: 800;
-    font-style: italic;
-    text-transform: uppercase;
+  margin-bottom: 6px;
+  color: var(--text-main);
+  font-family: var(--font-titre);
+  font-size: 22px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 .ability p {
-    color: #b3b9c6;
-    font-size: 14px;
-    line-height: 1.55;
-    overflow-wrap: anywhere;
+  color: #b3b9c6;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 600px) {
-    .modal-overlay {
-        padding: 10px;
-    }
+  .modal-overlay {
+    padding: 10px;
+  }
 
-    .hero-modal {
-        max-height: 92vh;
-    }
+  .hero-modal {
+    max-height: 92vh;
+  }
 
-    .modal-content {
-        padding: 20px 18px;
-    }
+  .modal-content {
+    padding: 20px 18px;
+  }
 
-    .modal-header {
+  .modal-header {
     --img-size: 68px;
-    }
+  }
 
-    .abilities-list {
-        grid-template-columns: 1fr;
-    }
+  .abilities-list {
+    grid-template-columns: 1fr;
+  }
 }
