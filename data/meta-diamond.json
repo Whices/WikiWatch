@@ -1,7 +1,7 @@
 {
   "metadata": {
     "rankScope": "Diamond",
-    "updatedAt": "2026-11-02",
+    "updatedAt": "2026-11-03",
     "status": "live"
   },
   "heroes": [
@@ -17,8 +17,8 @@
     {
       "key": "anran",
       "name": "Anran",
-      "winRate": 49.8,
-      "pickRate": 6.5,
+      "winRate": 49.7,
+      "pickRate": 6.4,
       "banRate": 6.4,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2c38b41d79a1ce9a08b9ad8eb7edf3ff819bd448af16a5815be8c7fdb7203aa0.png",
       "role": "DAMAGE"
@@ -45,7 +45,7 @@
       "key": "bastion",
       "name": "Bastion",
       "winRate": 45,
-      "pickRate": 11.2,
+      "pickRate": 11.1,
       "banRate": 15.5,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4ede795c2a681aaccfa72d0c901cba0cb8a2c292fd6a97b2ba9faed161c2d184.png",
       "role": "DAMAGE"
@@ -53,7 +53,7 @@
     {
       "key": "brigitte",
       "name": "Brigitte",
-      "winRate": 52.1,
+      "winRate": 52.2,
       "pickRate": 5.6,
       "banRate": 0.3,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/795fba91376d87d441a7f359ae12a3175dfa95825ccc4414cc6b95b129fc4cb0.png",
@@ -62,7 +62,7 @@
     {
       "key": "cassidy",
       "name": "Cassidy",
-      "winRate": 45.6,
+      "winRate": 45.7,
       "pickRate": 20.3,
       "banRate": 12.6,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9240cd64cc8ef58df9acbf55204ab1b5d8578f743fda5931f0dbccbd75ab841b.png",
@@ -71,9 +71,9 @@
     {
       "key": "dmon",
       "name": "D.Mon",
-      "winRate": 51.7,
+      "winRate": 51.8,
       "pickRate": 4.4,
-      "banRate": 7.4,
+      "banRate": 7.3,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a46c60b8562fdbd0b8308396d0808f7606fba208bc67cccf3f82fe56d2c73b9d.png",
       "role": "TANK"
     },
@@ -81,7 +81,7 @@
       "key": "dva",
       "name": "D.Va",
       "winRate": 52.2,
-      "pickRate": 6.9,
+      "pickRate": 7,
       "banRate": 54,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/df5a5532862d9292634fb3dc0e51a4705aa601de65e5e815513ccc663d84de56.png",
       "role": "TANK"
@@ -89,8 +89,8 @@
     {
       "key": "doctrine",
       "name": "Doctrine",
-      "winRate": 55.8,
-      "pickRate": 39.4,
+      "winRate": 55.7,
+      "pickRate": 39.2,
       "banRate": 3.3,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2492a15c575c12314907d0d77501ec337b4d56796bc7f03e5dfb50d415612bae.png",
       "role": "SUPPORT"
@@ -98,7 +98,7 @@
     {
       "key": "domina",
       "name": "Domina",
-      "winRate": 53.3,
+      "winRate": 53.2,
       "pickRate": 4.5,
       "banRate": 1.6,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1161c112292c56c052c0ae711792fcde06e3251b98bc9709e582dd7585b5dcd6.png",
@@ -109,14 +109,14 @@
       "name": "Doomfist",
       "winRate": 51.7,
       "pickRate": 12.6,
-      "banRate": 12.8,
+      "banRate": 13,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ff5c54f43ad253c7faeda9c4ed31d42582ea6b19205d197866f3dd0c0aa14c16.png",
       "role": "TANK"
     },
     {
       "key": "echo",
       "name": "Echo",
-      "winRate": 50.6,
+      "winRate": 50.8,
       "pickRate": 3.5,
       "banRate": 0.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/d4f2d5b0c2b7e82d61353186c5f23152ccba9d3569b50839aa580dca3e9114ba.png",
@@ -125,7 +125,7 @@
     {
       "key": "emre",
       "name": "Emre",
-      "winRate": 46.7,
+      "winRate": 46.6,
       "pickRate": 5.7,
       "banRate": 0.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c51e2f698138861c0e3b6cfab3c3ca9d67fd709be175e7c397aa6f2649712a30.png",
@@ -134,7 +134,7 @@
     {
       "key": "freja",
       "name": "Freja",
-      "winRate": 48.5,
+      "winRate": 48.6,
       "pickRate": 4.2,
       "banRate": 1.9,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/811963897c352d9f178bec882d94bd0281074feee7c429c5145b6b8ea8ebe862.png",
@@ -143,16 +143,16 @@
     {
       "key": "genji",
       "name": "Genji",
-      "winRate": 53.5,
+      "winRate": 53.4,
       "pickRate": 17.2,
-      "banRate": 5,
+      "banRate": 5.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/156b12c20b1aea872c1eeb5bb37a7de1047b2ab30ecefd0663a8925badde1ea8.png",
       "role": "DAMAGE"
     },
     {
       "key": "hanzo",
       "name": "Hanzo",
-      "winRate": 49.8,
+      "winRate": 49.9,
       "pickRate": 7.5,
       "banRate": 0.6,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/78b61c3e806fb26b02b8980fba62189155074fc15bd865b0883268e546030be5.png",
@@ -171,7 +171,7 @@
       "key": "illari",
       "name": "Illari",
       "winRate": 48.5,
-      "pickRate": 3.5,
+      "pickRate": 3.6,
       "banRate": 0.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ce42d1455e03e79f321345fea84b27a8918b5db8bd7ab9b2ca9e569606ede9e4.png",
       "role": "SUPPORT"
@@ -197,7 +197,7 @@
     {
       "key": "junkrat",
       "name": "Junkrat",
-      "winRate": 51.5,
+      "winRate": 51.4,
       "pickRate": 5.4,
       "banRate": 0.9,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7660b9fc6f25f30858fdd8797fe0d52b2306f1e78fef99843f58a274e69af046.png",
@@ -207,7 +207,7 @@
       "key": "juno",
       "name": "Juno",
       "winRate": 49.9,
-      "pickRate": 13.3,
+      "pickRate": 13.4,
       "banRate": 0.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c0167d251e57b0aa2b1e16c37d87f0e7c77263db9dd0503d77b5f2589bf3e4a0.png",
       "role": "SUPPORT"
@@ -224,7 +224,7 @@
     {
       "key": "lifeweaver",
       "name": "Lifeweaver",
-      "winRate": 45.1,
+      "winRate": 45.2,
       "pickRate": 8.7,
       "banRate": 0.5,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3376515cebed0904012e67e956f6d1b9c12e03da642845eeaf787b7e4c7b339d.png",
@@ -233,7 +233,7 @@
     {
       "key": "lucio",
       "name": "Lúcio",
-      "winRate": 52.7,
+      "winRate": 52.6,
       "pickRate": 5.3,
       "banRate": 0.3,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/040bb13f5123ab93faad2f95627ba184608aef4b2469a4d3003859c7087df044.png",
@@ -242,9 +242,9 @@
     {
       "key": "mauga",
       "name": "Mauga",
-      "winRate": 48.2,
+      "winRate": 48.1,
       "pickRate": 4.7,
-      "banRate": 38.9,
+      "banRate": 38.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/33d39bb439c08975197fc52eff4874716839711b5356c4fdc174f9c24bac1d0e.png",
       "role": "TANK"
     },
@@ -262,7 +262,7 @@
       "name": "Mercy",
       "winRate": 50.1,
       "pickRate": 11.2,
-      "banRate": 31.7,
+      "banRate": 31.6,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3bfb8bd8ec827e53d870f1238ab73d8aa1f5dbfbcfaaf7f96ffcd35b5c6102ab.png",
       "role": "SUPPORT"
     },
@@ -279,7 +279,7 @@
       "key": "moira",
       "name": "Moira",
       "winRate": 46.2,
-      "pickRate": 14,
+      "pickRate": 14.1,
       "banRate": 1.5,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f48f8485056d5d00dad195859188d23e50f7126b8b08b5646f46ef1b42f5e1de.png",
       "role": "SUPPORT"
@@ -289,14 +289,14 @@
       "name": "Orisa",
       "winRate": 50,
       "pickRate": 12.2,
-      "banRate": 40.2,
+      "banRate": 40.4,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a73958a28551f5254f3ab3f97c5f5f8d698a95c0b6a515d1a2b1caac169205a6.png",
       "role": "TANK"
     },
     {
       "key": "pharah",
       "name": "Pharah",
-      "winRate": 51.6,
+      "winRate": 51.7,
       "pickRate": 1.9,
       "banRate": 0.4,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/60ac2d5de4a6d34644d8872233da402f1436c87f804bb11a21661bb30bf4a51f.png",
@@ -305,7 +305,7 @@
     {
       "key": "ramattra",
       "name": "Ramattra",
-      "winRate": 43.7,
+      "winRate": 43.9,
       "pickRate": 4,
       "banRate": 1.6,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ddef7c9fb8ce4256e8508196b486f81950efe7aaa6cf27fec4668beb4cd15774.png",
@@ -316,14 +316,14 @@
       "name": "Reaper",
       "winRate": 49.3,
       "pickRate": 11.8,
-      "banRate": 4.3,
+      "banRate": 4.2,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/dc6ff07ac790c00dc95a40882449617bb6e0e38906b353a630cffe0c815270a9.png",
       "role": "DAMAGE"
     },
     {
       "key": "reinhardt",
       "name": "Reinhardt",
-      "winRate": 50.5,
+      "winRate": 50.4,
       "pickRate": 8.2,
       "banRate": 0.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/551fbe070c16fdfcc17f7f1de63af22c53e7d2f1340fc2f3172441504527bc4e.png",
@@ -351,7 +351,7 @@
       "key": "sierra",
       "name": "Sierra",
       "winRate": 48.9,
-      "pickRate": 8.5,
+      "pickRate": 8.6,
       "banRate": 2.9,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4bfd3d8b95844231115cb5bf4db03344c71bc3e865189c52403b2dc51438e63a.png",
       "role": "DAMAGE"
@@ -359,7 +359,7 @@
     {
       "key": "sigma",
       "name": "Sigma",
-      "winRate": 46.6,
+      "winRate": 46.7,
       "pickRate": 6.7,
       "banRate": 2.2,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a4c032fa466c9a6d9c6974747635d7ef910027f91cd58892af0c899db565f92d.png",
@@ -368,8 +368,8 @@
     {
       "key": "sojourn",
       "name": "Sojourn",
-      "winRate": 44.8,
-      "pickRate": 12,
+      "winRate": 44.9,
+      "pickRate": 12.1,
       "banRate": 0.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/82b8c1b8765dcb9a0ba16e343c3516bf324c771ac81e9878473280216e70a889.png",
       "role": "DAMAGE"
@@ -386,16 +386,16 @@
     {
       "key": "sombra",
       "name": "Sombra",
-      "winRate": 54.4,
-      "pickRate": 19.2,
-      "banRate": 21.9,
+      "winRate": 54.3,
+      "pickRate": 19,
+      "banRate": 21.6,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/47727b02a16e3bd7b2447d86ae1edf11587bc320b2aecb4f2f16a7ca4ad4e8a0.png",
       "role": "SUPPORT"
     },
     {
       "key": "symmetra",
       "name": "Symmetra",
-      "winRate": 50.4,
+      "winRate": 50.3,
       "pickRate": 2.4,
       "banRate": 3.4,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ebec57e8bd68b3d4383edfeb34f8f52dd0b94a6467d594c2fee722e8a97c32aa.png",
@@ -405,8 +405,8 @@
       "key": "torbjorn",
       "name": "Torbjörn",
       "winRate": 53,
-      "pickRate": 5.4,
-      "banRate": 1,
+      "pickRate": 5.5,
+      "banRate": 1.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ce17118cedc29b0d2ac1e059666bed36b9531c85079b0b894bb402d12c917ba9.png",
       "role": "DAMAGE"
     },
@@ -422,7 +422,7 @@
     {
       "key": "vendetta",
       "name": "Vendetta",
-      "winRate": 51.5,
+      "winRate": 51.6,
       "pickRate": 3.4,
       "banRate": 0.4,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/cf8ffb52b6f315546d5e94e9d6defad5a2c570798776956de23f47536f9529da.png",
@@ -431,7 +431,7 @@
     {
       "key": "venture",
       "name": "Venture",
-      "winRate": 53,
+      "winRate": 52.9,
       "pickRate": 2,
       "banRate": 0.1,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/dcab9123f5f55df22e54d4e797de43c71b917e0149dd059a7fd6136f48464cd0.png",
@@ -440,16 +440,16 @@
     {
       "key": "widowmaker",
       "name": "Widowmaker",
-      "winRate": 54.2,
+      "winRate": 54.1,
       "pickRate": 7,
-      "banRate": 45.6,
+      "banRate": 45.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/6e4702b45f196aaf51555cf57327322721f45458b17f5f0643ed008a88378259.png",
       "role": "DAMAGE"
     },
     {
       "key": "winston",
       "name": "Winston",
-      "winRate": 51.4,
+      "winRate": 51.3,
       "pickRate": 6.8,
       "banRate": 1.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/46a10db3aa908c590ddc4e7606376a88143d1f1306ecfbea043263040f9529a5.png",
@@ -458,7 +458,7 @@
     {
       "key": "wrecking-ball",
       "name": "Wrecking Ball",
-      "winRate": 48,
+      "winRate": 48.1,
       "pickRate": 4,
       "banRate": 2.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9ef1d58867136e0b26f928d896000b9dab216118f6e2f59e53f2e975e1e27afa.png",
@@ -467,7 +467,7 @@
     {
       "key": "wuyang",
       "name": "Wuyang",
-      "winRate": 48,
+      "winRate": 48.1,
       "pickRate": 3.3,
       "banRate": 0,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4959500b495b35c0908be2abda56b53f2601b2c5cc39a1cfde8df1bffd38d66d.png",
@@ -478,16 +478,16 @@
       "name": "Zarya",
       "winRate": 43.1,
       "pickRate": 4.4,
-      "banRate": 12.6,
+      "banRate": 12.7,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9b6f63cc66ddf9d5e0862173c733cc0d2e574c5c89357798d91b93b2f95a7080.png",
       "role": "TANK"
     },
     {
       "key": "zenyatta",
       "name": "Zenyatta",
-      "winRate": 51.1,
-      "pickRate": 8.9,
-      "banRate": 1.6,
+      "winRate": 51.3,
+      "pickRate": 9,
+      "banRate": 1.5,
       "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7d1546b1541a8afc39353f9337a408d6275a141b0432b7e560ef61579996b0fc.png",
       "role": "SUPPORT"
     }
